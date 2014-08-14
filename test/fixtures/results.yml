@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wins: 1
+  loses: 1
+  tiebreak_score: 1
+  week_id: 
+  season_id: 
+  user_id: 
+
+two:
+  wins: 1
+  loses: 1
+  tiebreak_score: 1
+  week_id: 
+  season_id: 
+  user_id: 
