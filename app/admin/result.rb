@@ -1,4 +1,5 @@
 ActiveAdmin.register Result do
+  permit_params :wins, :loses, :tiebreak_score
 
 
   # See permitted parameters documentation:
