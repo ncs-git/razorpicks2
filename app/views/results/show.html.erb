@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wins:</strong>
+  <%= @result.wins %>
+</p>
+
+<p>
+  <strong>Loses:</strong>
+  <%= @result.loses %>
+</p>
+
+<p>
+  <strong>Tiebreak score:</strong>
+  <%= @result.tiebreak_score %>
+</p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @result.week %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @result.season %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @result.user %>
+</p>
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>
