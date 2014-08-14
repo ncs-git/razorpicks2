@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Conference -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Conference %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @conference.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @conference.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:nickname) %></dt>
+      <dd><pre class="prettyprint"><%= @conference.nickname %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @conference.nickname %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              conferences_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_conference_path(@conference), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              conference_path(@conference),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_conference_path(@conference) %> |
-<%= link_to 'Back', conferences_path %>

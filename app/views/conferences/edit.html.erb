@@ -1,6 +1,5 @@
-<h1>Editing conference</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @conference %> |
-<%= link_to 'Back', conferences_path %>
+<%- model_class = Conference -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Conference %></h1>
+</div>
+<%= render :partial => 'form' %>
