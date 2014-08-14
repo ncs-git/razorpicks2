@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2014-08-14 21:39:28
+  end: 2014-08-14 21:39:28
+  due_by: 2014-08-14 21:39:28
+  name: MyString
+  current: false
+  completed: false
+  locked: false
+  season_id: 
+
+two:
+  start: 2014-08-14 21:39:28
+  end: 2014-08-14 21:39:28
+  due_by: 2014-08-14 21:39:28
+  name: MyString
+  current: false
+  completed: false
+  locked: false
+  season_id: 
