@@ -29,6 +29,7 @@ class PicksController < ApplicationController
   # POST /picks.json
   def create
     @pick = Pick.new(pick_params)
+    @pick.user = current_user
 
     respond_to do |format|
       if @pick.save
