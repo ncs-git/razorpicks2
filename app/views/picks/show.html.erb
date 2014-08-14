@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Home score:</strong>
+  <%= @pick.home_score %>
+</p>
+
+<p>
+  <strong>Away score:</strong>
+  <%= @pick.away_score %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pick.user %>
+</p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @pick.week %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @pick.game %>
+</p>
+
+<%= link_to 'Edit', edit_pick_path(@pick) %> |
+<%= link_to 'Back', picks_path %>
