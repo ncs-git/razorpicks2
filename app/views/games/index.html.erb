@@ -1,0 +1,55 @@
+<h1>Listing games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Home team</th>
+      <th>Away team</th>
+      <th>Home score</th>
+      <th>Away score</th>
+      <th>Played on</th>
+      <th>Kickoff</th>
+      <th>Complete</th>
+      <th>Locked</th>
+      <th>Tiebreaker</th>
+      <th>Summary url</th>
+      <th>Preview url</th>
+      <th>Line</th>
+      <th>Name</th>
+      <th>Venue</th>
+      <th>Location</th>
+      <th>Week</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.home_team_id %></td>
+        <td><%= game.away_team_id %></td>
+        <td><%= game.home_score %></td>
+        <td><%= game.away_score %></td>
+        <td><%= game.played_on %></td>
+        <td><%= game.kickoff %></td>
+        <td><%= game.complete %></td>
+        <td><%= game.locked %></td>
+        <td><%= game.tiebreaker %></td>
+        <td><%= game.summary_url %></td>
+        <td><%= game.preview_url %></td>
+        <td><%= game.line %></td>
+        <td><%= game.name %></td>
+        <td><%= game.venue %></td>
+        <td><%= game.location %></td>
+        <td><%= game.week %></td>
+        <td><%= link_to 'Show', game %></td>
+        <td><%= link_to 'Edit', edit_game_path(game) %></td>
+        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>

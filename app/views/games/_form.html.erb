@@ -1,0 +1,26 @@
+<%= simple_form_for(@game) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :home_team_id %>
+    <%= f.input :away_team_id %>
+    <%= f.input :home_score %>
+    <%= f.input :away_score %>
+    <%= f.input :played_on %>
+    <%= f.input :kickoff %>
+    <%= f.input :complete %>
+    <%= f.input :locked %>
+    <%= f.input :tiebreaker %>
+    <%= f.input :summary_url %>
+    <%= f.input :preview_url %>
+    <%= f.input :line %>
+    <%= f.input :name %>
+    <%= f.input :venue %>
+    <%= f.input :location %>
+    <%= f.association :week %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
