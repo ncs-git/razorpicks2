@@ -1,4 +1,5 @@
 ActiveAdmin.register Week do
+  permit_params :start, :end, :due_by, :name, :current, :completed, :locked
 
 
   # See permitted parameters documentation:
