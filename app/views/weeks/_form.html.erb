@@ -1,18 +1,52 @@
-<%= simple_form_for(@week) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :start %>
-    <%= f.input :end %>
-    <%= f.input :due_by %>
-    <%= f.input :name %>
-    <%= f.input :current %>
-    <%= f.input :completed %>
-    <%= f.input :locked %>
-    <%= f.association :season %>
+<%= form_for @week, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :start, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :start, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :end, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :end, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :due_by, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :due_by, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :current, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :current, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :completed, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :completed, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :locked, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :locked, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  weeks_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
