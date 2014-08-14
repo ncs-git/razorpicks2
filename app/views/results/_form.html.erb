@@ -1,16 +1,28 @@
-<%= simple_form_for(@result) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :wins %>
-    <%= f.input :loses %>
-    <%= f.input :tiebreak_score %>
-    <%= f.association :week %>
-    <%= f.association :season %>
-    <%= f.association :user %>
+<%= form_for @result, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :wins, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :wins, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :loses, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :loses, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tiebreak_score, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :tiebreak_score, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  results_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
