@@ -1,26 +1,100 @@
-<%= simple_form_for(@game) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :home_team_id %>
-    <%= f.input :away_team_id %>
-    <%= f.input :home_score %>
-    <%= f.input :away_score %>
-    <%= f.input :played_on %>
-    <%= f.input :kickoff %>
-    <%= f.input :complete %>
-    <%= f.input :locked %>
-    <%= f.input :tiebreaker %>
-    <%= f.input :summary_url %>
-    <%= f.input :preview_url %>
-    <%= f.input :line %>
-    <%= f.input :name %>
-    <%= f.input :venue %>
-    <%= f.input :location %>
-    <%= f.association :week %>
+<%= form_for @game, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :home_team_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :home_team_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :away_team_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :away_team_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :home_score, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :home_score, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :away_score, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :away_score, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :played_on, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :played_on, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :kickoff, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :kickoff, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :complete, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :complete, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :locked, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :locked, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tiebreaker, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :tiebreaker, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :summary_url, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :summary_url, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :preview_url, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :preview_url, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :line, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :line, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :venue, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :venue, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :location, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  games_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
