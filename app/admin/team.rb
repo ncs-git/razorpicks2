@@ -1,4 +1,5 @@
 ActiveAdmin.register Team do
+  permit_params :name, :mascot, :city, :state, :wins, :loses, :url, :nickname
 
 
   # See permitted parameters documentation:
