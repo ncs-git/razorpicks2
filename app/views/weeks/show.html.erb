@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @week.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @week.end %>
+</p>
+
+<p>
+  <strong>Due by:</strong>
+  <%= @week.due_by %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @week.name %>
+</p>
+
+<p>
+  <strong>Current:</strong>
+  <%= @week.current %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @week.completed %>
+</p>
+
+<p>
+  <strong>Locked:</strong>
+  <%= @week.locked %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @week.season %>
+</p>
+
+<%= link_to 'Edit', edit_week_path(@week) %> |
+<%= link_to 'Back', weeks_path %>

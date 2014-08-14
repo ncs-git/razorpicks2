@@ -1,0 +1,18 @@
+<%= simple_form_for(@week) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :start %>
+    <%= f.input :end %>
+    <%= f.input :due_by %>
+    <%= f.input :name %>
+    <%= f.input :current %>
+    <%= f.input :completed %>
+    <%= f.input :locked %>
+    <%= f.association :season %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
