@@ -1,4 +1,5 @@
 ActiveAdmin.register Conference do
+  permit_params :name, :nickname
 
 
   # See permitted parameters documentation:
