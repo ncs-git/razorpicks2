@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :seasons
+
   resources :weeks
 
   resources :picks
