@@ -1,4 +1,5 @@
 ActiveAdmin.register Pick do
+  permit_params :home_score, :away_score
 
 
   # See permitted parameters documentation:
